@@ -1,0 +1,27 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="ConsoleLauncher.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ResultForegroundColor" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="ResultBackgroundColor" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="AlternatingResultForegroundColor" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Green</Value>
+    </Setting>
+    <Setting Name="AlternatingResultBackgroundColor" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="Paths" Type="System.String" Scope="User">
+      <Value Profile="(Default)">d:\tools</Value>
+    </Setting>
+    <Setting Name="SearchPatterns" Type="System.String" Scope="User">
+      <Value Profile="(Default)">*.exe;*.sln</Value>
+    </Setting>
+    <Setting Name="Actions" Type="System.String" Scope="User">
+      <Value Profile="(Default)">invoke;print</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
