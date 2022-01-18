@@ -18,7 +18,7 @@
                 {
                     foreach (string file in Directory.GetFiles(path, searchPattern, SearchOption.AllDirectories))
                     {
-                        allResults.Add(new MenuItem(Path.GetFileName(file), file));
+                        allResults.Add(new MenuItem(file));
                     }
                 }
             }

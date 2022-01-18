@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CacheMenuInput.cs" />
     <Compile Include="ConsoleWritelineMenuOutputHandler.cs" />
     <Compile Include="Context.cs" />
     <Compile Include="DisposableBase.cs" />

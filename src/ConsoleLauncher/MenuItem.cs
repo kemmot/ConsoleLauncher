@@ -4,16 +4,13 @@
 
     public class MenuItem
     {
-        public MenuItem(string name, string path)
+        public MenuItem(string path)
         {
-            if (name == null) throw new ArgumentNullException(nameof(name));
-            if (name.Length == 0) throw new ArgumentException("Argument cannot be zero length", nameof(name));
-
             if (path == null) throw new ArgumentNullException(nameof(path));
             if (path.Length == 0) throw new ArgumentException("Argument cannot be zero length", nameof(path));
 
-            this.Name = name;
             this.Path = path;
+            Name = System.IO.Path.GetFileName(this.Path);
         }
 
         public string Name { get; }

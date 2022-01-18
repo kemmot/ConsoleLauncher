@@ -106,5 +106,41 @@ namespace ConsoleLauncher.Properties {
                 this["Actions"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool CacheEnable {
+            get {
+                return ((bool)(this["CacheEnable"]));
+            }
+            set {
+                this["CacheEnable"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("5.00:00:00")]
+        public global::System.TimeSpan CacheMaxAge {
+            get {
+                return ((global::System.TimeSpan)(this["CacheMaxAge"]));
+            }
+            set {
+                this["CacheMaxAge"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("d:\\Temp\\ConsoleLauncher.cache.txt")]
+        public string CachePath {
+            get {
+                return ((string)(this["CachePath"]));
+            }
+            set {
+                this["CachePath"] = value;
+            }
+        }
     }
 }

@@ -12,10 +12,20 @@
 
         static void Main(string[] args)
         {
+            bool refreshCache;
+            if (args.Length > 0 && args[0].ToUpperInvariant() == "--REFRESHCACHE")
+            {
+                refreshCache = true;
+            }
+            else
+            {
+                refreshCache = false;
+            }
+
             var output = new SystemConsole2();
             var menu = InitialiseMenu();
             var handler = InitialiseHandler(output);
-            var input = InitialiseInput();
+            var input = InitialiseInput(refreshCache);
 
             handler.Handle(menu.ShowDialog(input, output));
 
@@ -26,11 +36,28 @@
             }
         }
 
-        private static IMenuInput InitialiseInput()
+        private static IMenuInput InitialiseInput(bool refreshCache)
         {
-            var input = new FileSystemMenuInput();
-            input.Paths.AddRange(Properties.Settings.Default.Paths.Split(';'));
-            input.SearchPatterns.AddRange(Properties.Settings.Default.SearchPatterns.Split(';'));
+            var fileSystemInput = new FileSystemMenuInput();
+            fileSystemInput.Paths.AddRange(Properties.Settings.Default.Paths.Split(';'));
+            fileSystemInput.SearchPatterns.AddRange(Properties.Settings.Default.SearchPatterns.Split(';'));
+
+            IMenuInput input;
+            if (Properties.Settings.Default.CacheEnable)
+            {
+                var cachedInput = new CacheMenuInput(fileSystemInput, Properties.Settings.Default.CachePath, Properties.Settings.Default.CacheMaxAge);
+                if (refreshCache)
+                {
+                    cachedInput.ForceCacheRefresh();
+                }
+
+                input = cachedInput;
+            }
+            else
+            {
+                input = fileSystemInput;
+            }
+
             return input;
         }
 
