@@ -170,7 +170,7 @@
             EraseRemainingLine(output);
 
             output.CursorLeft = 0;
-            output.Write("{0}", index.ToString().PadLeft(countLength, ' '));
+            output.Write("{0}/{1}", index.ToString().PadLeft(countLength, ' '), results.Count.ToString().PadLeft(countLength, ' '));
         }
 
         private void GetColors(IConsole output, int index, out ConsoleColor backgroundColor, out ConsoleColor foregroundColor)
